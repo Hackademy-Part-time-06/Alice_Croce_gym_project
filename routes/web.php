@@ -18,3 +18,8 @@ Route::get('/', [PageController::class, 'homepage'])->name('homepage');
 Route::get('/contatti', [PageController::class, 'contatti'])->name('contatti');
 Route::get('/corsi-disponibili', [PageController::class, 'corsidisponibili'])->name('corsi-disponibili');
 Route::get('/dettagli-corso/{riferimento}', [PageController::class, 'dettaglicorso'])->name('dettagli-corso');
+
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::post('/invia', [PageController::class, 'send'])->name('send');
+
+
