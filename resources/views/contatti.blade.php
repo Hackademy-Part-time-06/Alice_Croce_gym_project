@@ -1,7 +1,8 @@
 <x-main>
-    <!-- controlla se ci sono errori, li evidenzia -->
+    
     <div class="row gx-5 justify-content-center">
         <div class="col-lg-8 col-xl-6">
+<!-- snippet per gli errori di validazione -->
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -14,7 +15,7 @@
             <!-- post del form -->
             <form action="{{route('send')}}" method="POST">
                 @method('POST')
-                @csrf
+                @csrf<!-- token per la protezione dei dati -->
 
         <div class="container py-4">
 

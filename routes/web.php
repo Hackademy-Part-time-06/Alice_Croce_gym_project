@@ -22,4 +22,7 @@ Route::get('/dettagli-corso/{riferimento}', [PageController::class, 'dettaglicor
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/invia', [PageController::class, 'send'])->name('send');
 
-
+//creo una rotta di riposta all'invio della mail: avrò un uri nuovo ed un msg di ringraziamento da me impostato
+Route::get('/grazie', function () {
+    return 'Grazie';
+})->name('thank');

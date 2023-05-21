@@ -8,17 +8,19 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Address;
 
 class InfoMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -27,7 +29,8 @@ class InfoMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Info Mail',
+            from: new Address('alicecroce2@gmail.com', 'Alice'),
+            subject: 'Mail di prova',
         );
     }
 

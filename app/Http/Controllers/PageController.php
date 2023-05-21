@@ -55,7 +55,7 @@ class PageController extends Controller
 
     public function send(Request $request)
     {
-        //validazione dei dati
+        //validazione dei dati(slide corso 006)
 
         $request->validate([
             "name" => "required|string",
@@ -70,8 +70,10 @@ class PageController extends Controller
             "message" => $request->message,
 
         ];
-        //dd($data);
         Mail::to($request->email)->send(new InfoMail($data));
-        return redirect()->route('homepage');
+
+        return redirect()
+            ->route('homepage')
+            ->with('success', 'Email inviata');
     }
 }
